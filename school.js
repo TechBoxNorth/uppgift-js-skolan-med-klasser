@@ -37,4 +37,10 @@ export class School {
             }           
         });
     }
+
+    displayAllStudents(){
+        this.students.forEach(student => {
+            console.log(`Name: ${student.name}`,`Age: ${student.age}`, `Gender: ${student.gender}`);
+        });
+    }
 }

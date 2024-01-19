@@ -24,6 +24,7 @@ let tim = new Teacher('Tim Berners-Lee'); // Inventor of HTML
 let brendan = new Teacher('Brendan Eich'); // Inventor of Javascript
 let hakon = new Teacher('Hakon Wium Lie'); // Inventor of CSS
 
+// 12.
 function populateSchool(){
     frontEndFaculty.addSubject(html);
     frontEndFaculty.addSubject(css);
@@ -46,6 +47,16 @@ function populateSchool(){
             student.enlistToSubject(subject);
         });
     });
+}
+
+
+
+function displayAllSubjectsOfStudent(student){
+    let subs = [];
+    student.subjects.forEach(subject => {
+        subs.push(subject);
+    });
+    return subs;
 }
 
 
@@ -84,9 +95,23 @@ console.log(addSubjectToTeacher(javascript, brendan));
 
 // 10. add more methods: quitSubject, removeTeacher, relegateStudent, fireTeacher
 
+// 13. create function displayAllStudents
+
+// 14. Can't have too many functions, make some more! every function should have a return value.
+// displayAllSubjectsOfStudent(student) 
+// displayAllStudentsEnlistedToSubject(subject)
+// displayAllTeachers
+
+
 
 
 
 populateSchool();
+
+frontEndFaculty.displayAllStudents();
+
+console.log(displayAllSubjectsOfStudent(jenny));
+
+frontEndFaculty.relegateStudent(jessica);
 
 console.log(frontEndFaculty);
