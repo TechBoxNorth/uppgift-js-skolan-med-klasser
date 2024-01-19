@@ -24,6 +24,32 @@ let tim = new Teacher('Tim Berners-Lee'); // Inventor of HTML
 let brendan = new Teacher('Brendan Eich'); // Inventor of Javascript
 let hakon = new Teacher('Hakon Wium Lie'); // Inventor of CSS
 
+function populateSchool(){
+    frontEndFaculty.addSubject(html);
+    frontEndFaculty.addSubject(css);
+    frontEndFaculty.addSubject(javascript);
+    frontEndFaculty.addStudent(joanna);
+    frontEndFaculty.addStudent(jenny);
+    frontEndFaculty.addStudent(joshua);
+    frontEndFaculty.addStudent(john);
+    frontEndFaculty.addStudent(jessica);
+    frontEndFaculty.addTeacher(tim);
+    frontEndFaculty.addTeacher(brendan);
+    frontEndFaculty.addTeacher(hakon);
+
+    tim.addSubject(html);
+    brendan.addSubject(javascript);
+    hakon.addSubject(css);
+
+    frontEndFaculty.students.forEach(student => {
+        frontEndFaculty.subjects.forEach(subject => {
+            student.enlistToSubject(subject);
+        });
+    });
+}
+
+
+
 /*
 
 // 4. add a subject to a teacher
@@ -49,11 +75,18 @@ console.log(addSubjectToTeacher(javascript, brendan));
 */
 
 // 7. add function to teacher class (done in teacher.js)
-brendan.addSubject(javascript);
-console.log(brendan, javascript);
+// brendan.addSubject(javascript);
+// console.log(brendan, javascript);
 
 // 8. add these methods: addTeacher, enlistToSubject, addStudent, addSubject
 
 // 9. Try the different methods, use console to inspect.
 
 // 10. add more methods: quitSubject, removeTeacher, relegateStudent, fireTeacher
+
+
+
+
+populateSchool();
+
+console.log(frontEndFaculty);
