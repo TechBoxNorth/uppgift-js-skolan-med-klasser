@@ -3,4 +3,9 @@ export class Teacher{
         this.name = name;
         this.subjects = [];
     }
+    // 7.
+    addSubject(subject){
+        this.subjects.push(subject);
+        subject.teacher = this;
+    }
 }
