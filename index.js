@@ -2,6 +2,7 @@ import { School } from "./school.js";
 import { Subject } from "./subject.js";
 import { Student } from "./student.js";
 import { Teacher } from "./teacher.js";
+import { Grade } from "./grade.js";
 
 
 // create a school
@@ -59,6 +60,14 @@ function displayAllSubjectsOfStudent(student){
     return subs;
 }
 
+function displayAllStudentsEnlistedToSubject(subject){
+    let studs = [];
+    subject.students.forEach(student => {
+        studs.push(student.name);
+    });
+    return studs;
+}
+
 
 
 /*
@@ -100,18 +109,23 @@ console.log(addSubjectToTeacher(javascript, brendan));
 // 14. Can't have too many functions, make some more! every function should have a return value.
 // displayAllSubjectsOfStudent(student) 
 // displayAllStudentsEnlistedToSubject(subject)
-// displayAllTeachers
+// displayAllTeachers 
+
+// 15. add a class for grades
 
 
 
 
 
 populateSchool();
+let johnJavascriptGrade = new Grade(john, javascript, 'B', 'Doing quite well.');
+console.log(john);
+//frontEndFaculty.displayAllStudents();
 
-frontEndFaculty.displayAllStudents();
+//console.log(displayAllSubjectsOfStudent(jenny));
+//console.log(displayAllStudentsEnlistedToSubject(javascript));
+//console.log(frontEndFaculty.displayAllTeachers());
 
-console.log(displayAllSubjectsOfStudent(jenny));
+//frontEndFaculty.relegateStudent(jessica);
 
-frontEndFaculty.relegateStudent(jessica);
-
-console.log(frontEndFaculty);
+//console.log(frontEndFaculty);

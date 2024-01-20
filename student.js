@@ -4,6 +4,7 @@ export class Student{
         this.age = age;
         this.gender = gender;
         this.subjects = [];
+        this.grades = [];
     }
     enlistToSubject(subject){
         this.subjects.push(subject);

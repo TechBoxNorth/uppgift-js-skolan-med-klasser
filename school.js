@@ -43,4 +43,10 @@ export class School {
             console.log(`Name: ${student.name}`,`Age: ${student.age}`, `Gender: ${student.gender}`);
         });
     }
+
+    displayAllTeachers(){
+        this.teachers.forEach(teacher => {
+            console.log(`Name: ${teacher.name}`);
+        });
+    }
 }
